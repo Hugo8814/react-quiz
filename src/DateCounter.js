@@ -6,7 +6,7 @@ function reducer(state, action) {
     case "dec":
       return { ...state, count: state.count - state.step };
     case "inc":
-      return { ...state, count: state.count + state.step };
+      return { ...state, count: state.count + state };
     case "setCount":
       return { ...state, count: action.payload };
     case "setStep":
