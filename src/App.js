@@ -8,7 +8,7 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case "SET_QUESTIONS":
+    case "dataReceived":
       return { ...state, questions: action.payload, status: "ready" };
     case "setLoading":
       return { ...state, status: "loading" };
@@ -25,7 +25,7 @@ export default function App() {
     fetch("https://opentdb.com/api.php?amount=15").then((res) =>
       res
         .json()
-        .then((data) => console.log(data))
+        .then((data) => dispatch({ type: "dataReceived", payload: data }))
         .catch((err) => console.log(err))
     );
   }, []);
