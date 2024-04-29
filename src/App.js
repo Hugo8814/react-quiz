@@ -3,6 +3,8 @@ import Header from "./Header";
 import Main from "./Main";
 import Loader from "./Loader";
 import Error from "./Error";
+import StartScreen from "./StartScreen";
+
 const initialState = {
   questions: [],
   status: "loading", //"loading", "ready", "error" "active" "finished" teo
@@ -37,7 +39,7 @@ export default function App() {
       <Main>
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
-        {status === "ready" && <Error />}
+        {status === "ready" && <StartScreen />}
       </Main>
     </div>
   );

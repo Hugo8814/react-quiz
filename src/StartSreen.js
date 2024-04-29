@@ -1,4 +1,4 @@
-function startScreen() {
+function StartScreen() {
   return (
     <div className="start">
       <h2>Welcome to readyeact Quiz!</h2>
@@ -8,4 +8,4 @@ function startScreen() {
   );
 }
 
-export default startScreen;
+export default StartScreen;
