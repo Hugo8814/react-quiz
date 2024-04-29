@@ -3,7 +3,7 @@ import Header from "./Header";
 import Main from "./Main";
 const initialState = {
   questions: [],
-  status: "loading", //"loading", "ready", "error" "active" "finished"
+  status: "loading", //"loading", "ready", "error" "active" "finished" teo
 };
 
 function reducer(state, action) {
