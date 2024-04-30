@@ -42,6 +42,7 @@ export default function App() {
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
         {status === "ready" && <StartScreen numQuestions={numQuestions} />}
+        {status === "active" && <Question />}
       </Main>
     </div>
   );
