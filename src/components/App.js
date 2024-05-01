@@ -99,6 +99,7 @@ export default function App() {
             />
           </>
         )}
+        {/* {status === "finished" && <h1>You finished the quiz</h1>} */}
       </Main>
     </div>
   );
