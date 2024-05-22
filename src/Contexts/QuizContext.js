@@ -6,8 +6,6 @@ const SECS_PER_QUESTION = 30;
 
 const initialState = {
   questions: [],
-
-  // 'loading', 'error', 'ready', 'active', 'finished'
   status: "loading",
   index: 0,
   answer: null,
@@ -36,8 +34,7 @@ function reducer(state, action) {
         secondsRemaining: state.questions.length * SECS_PER_QUESTION,
       };
     case "newAnswer":
-      const question = state.questions.at(state.index);
-
+      const question = state.questions[state.index];
       return {
         ...state,
         answer: action.payload,
@@ -57,16 +54,14 @@ function reducer(state, action) {
       };
     case "restart":
       return { ...initialState, questions: state.questions, status: "ready" };
-
     case "tick":
       return {
         ...state,
         secondsRemaining: state.secondsRemaining - 1,
         status: state.secondsRemaining === 0 ? "finished" : state.status,
       };
-
     default:
-      throw new Error("Action unkonwn");
+      throw new Error(`Action unknown: ${action.type}`);
   }
 }
 
